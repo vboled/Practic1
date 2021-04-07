@@ -54,8 +54,7 @@ public class DiceRoller {
                 System.out.print(player.getNickname() + " ");
             }
         }
-        System.out.println();
-        System.out.println();
+        System.out.println("\n\n");
     }
 
     void congratulation() {
@@ -68,7 +67,7 @@ public class DiceRoller {
         System.out.println("\nEnd Game!");
     }
 
-    public void play() {
+    public void play() throws InterruptedException {
         while (true) {
             int maxTurnScore = 0;
             for (Player player : allPlayers) {
@@ -82,6 +81,7 @@ public class DiceRoller {
             Collections.sort(this.allPlayers);
             System.out.println("Subtotals: ");
             this.printScores();
+            Thread.sleep(2000);
             for (Player player : allPlayers) {
                 if (player.getNumberOfWins() == 7) {
                     this.congratulation();
