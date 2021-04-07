@@ -16,7 +16,6 @@ public class Main {
         try {
             DiceRoller game = new DiceRoller(n, k);
             game.play();
-
         } catch (Exception e) {
             System.out.println(e.toString());
         }

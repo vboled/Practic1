@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class DiceRoller {
     private ArrayList<Player> allPlayers = new ArrayList<Player>();
@@ -66,7 +65,7 @@ public class DiceRoller {
                 System.out.print(player.getNickname() + " ");
             }
         }
-        System.out.println("\n3End Game!");
+        System.out.println("\nEnd Game!");
     }
 
     public void play() {
@@ -80,6 +79,7 @@ public class DiceRoller {
                 player.increaseScore(currentScore);
             }
             this.turnWinners(maxTurnScore);
+            Collections.sort(this.allPlayers);
             System.out.println("Subtotals: ");
             this.printScores();
             for (Player player : allPlayers) {

@@ -1,4 +1,4 @@
-public class Player {
+public class Player implements Comparable<Player> {
     private int scores;
     private int numberOfWins;
     private int turnScore;
@@ -8,6 +8,11 @@ public class Player {
         this.nickname = nickname;
         this.scores = 0;
         this.numberOfWins = 0;
+    }
+
+    @Override
+    public int compareTo(Player player) {
+        return player.turnScore -this.turnScore;
     }
 
     void increaseNumberOfWins() {
