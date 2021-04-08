@@ -12,7 +12,7 @@ public class Player implements Comparable<Player> {
 
     @Override
     public int compareTo(Player player) {
-        return player.turnScore -this.turnScore;
+        return player.turnScore - this.turnScore;
     }
 
     void increaseNumberOfWins() {
