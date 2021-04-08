@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] argv) {
-        int n = 0, k = 0;
+        int n = 0, k = 0;                           // Число игроков, число костей в партии
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Input number of players:");

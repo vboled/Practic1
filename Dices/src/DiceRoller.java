@@ -22,7 +22,7 @@ public class DiceRoller {
     int makeTurn(Player player) {
         int score = 0;
         int turnScoreSum = 0;
-        if (player.getNickname() == "You") {
+        if (player.getNickname() == "You") {                    // Имитируем ход пользователя
             System.out.println("This is your turn!");
             System.out.println("Press Enter key to roll dice");
             Scanner scanner = new Scanner(System.in);
@@ -68,7 +68,7 @@ public class DiceRoller {
     }
 
     public void play() throws InterruptedException {
-        while (true) {
+        while (true) {                                  // Вечный цикл, который прерывается при достижении каким-либо игроков 7 побед
             int maxTurnScore = 0;
             for (Player player : allPlayers) {
                 int currentScore = this.makeTurn(player);
@@ -77,13 +77,13 @@ public class DiceRoller {
                 }
                 player.increaseScore(currentScore);
             }
-            this.turnWinners(maxTurnScore);
-            Collections.sort(this.allPlayers);
+            this.turnWinners(maxTurnScore);         // Определеяем победителей раунда
+            Collections.sort(this.allPlayers);      // Сортируем массив с игроками по количеству набранных очков в последней партии
             System.out.println("Subtotals: ");
             this.printScores();
-            Thread.sleep(2000);
+            Thread.sleep(2000);               // Задержка для того, чтобы можно было посмотреть результаты последнего раунда
             for (Player player : allPlayers) {
-                if (player.getNumberOfWins() == 7) {
+                if (player.getNumberOfWins() == 7) {  // Проверка на наличие победителя
                     this.congratulation();
                     return;
                 }
