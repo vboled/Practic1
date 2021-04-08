@@ -25,6 +25,7 @@ public class EquationSolver {
             return null;
         if (a == 0) {                                       // this is the usual linear equation
             res.add(-c / b);
+            return res;
         }
         double d = Discriminant.getDiscriminante(a, b, c);
         if (d < 0)                                          // there are no real solutions
